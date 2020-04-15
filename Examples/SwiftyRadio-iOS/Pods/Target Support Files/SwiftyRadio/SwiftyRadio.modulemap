@@ -1,0 +1,6 @@
+framework module SwiftyRadio {
+  umbrella header "SwiftyRadio-umbrella.h"
+
+  export *
+  module * { export * }
+}

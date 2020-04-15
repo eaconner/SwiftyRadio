@@ -1,0 +1,16 @@
+PODS:
+  - SwiftyRadio (1.4.8)
+
+DEPENDENCIES:
+  - SwiftyRadio (from `../../`)
+
+EXTERNAL SOURCES:
+  SwiftyRadio:
+    :path: ../../
+
+SPEC CHECKSUMS:
+  SwiftyRadio: 2fbf6b2a70ae961311a364da853cc5eef21887ae
+
+PODFILE CHECKSUM: 1ce5bee565e99b958b1399d66e3b7d2c5ce51e89
+
+COCOAPODS: 1.3.1

@@ -1,0 +1,6 @@
+use_frameworks!
+platform :tvos, '9.0'
+
+target 'SwiftyRadio-tvOS' do
+	pod 'SwiftyRadio', :path => '../../'
+end
