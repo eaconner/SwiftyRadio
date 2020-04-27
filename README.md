@@ -3,10 +3,6 @@
 [![License](https://img.shields.io/cocoapods/l/SwiftyRadio.svg?style=flat)](https://cocoapods.org/pods/SwiftyRadio)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftyRadio.svg?style=flat)](https://cocoapods.org/pods/SwiftyRadio)
 
-## Example
-
-To run the example projects, clone the repo, and run `pod install` from the example project directory first.
-
 ## Installation
 ### Manual
 Just drop the **SwiftyRadio.swift** file into your project. That's it!
@@ -29,7 +25,6 @@ Just drop the **SwiftyRadio.swift** file into your project. That's it!
 	`import SwiftyRadio`
 
 ### Swift Package Manager
-
 The [Swift Package Manager] is a tool for managing the distribution of Swift code.
 
  1. Update your `Package.swift` file to include the following:
@@ -40,7 +35,7 @@ The [Swift Package Manager] is a tool for managing the distribution of Swift cod
 	let package = Package(
 		name: "My Radio App",
 		dependencies: [
-			.Package(url: "https://bitbucket.org/ericconnerapps/swiftyradio.git"),
+			.Package(url: "https://github.com/eaconner/SwiftyRadio.git"),
 		]
 	)
 	```
@@ -48,7 +43,6 @@ The [Swift Package Manager] is a tool for managing the distribution of Swift cod
  2. Run `swift build`.
 
 ## Prerequisites
-
 In order to support background mode, append the following to your `Info.plist`:
 ```plist
 <key>UIBackgroundModes</key>
@@ -67,7 +61,6 @@ If you want to stream from `http://` URLs, append the following to your `Info.pl
 ```
 
 ## Usage
-
 In `AppDelegate.swift` add the following code after imports and before `@UIApplicationMain`.
 ```swift
 // Create a variable for SwiftyRadio
@@ -87,7 +80,6 @@ swiftyRadio.play()
 ```
 
 ## Handling Remote Events
-
 In order to handle remote events, you should do the following:
 
 In `AppDelegate.swift` add the following code in `didFinishLaunchingWithOptions`:
@@ -96,24 +88,16 @@ In `AppDelegate.swift` add the following code in `didFinishLaunchingWithOptions`
 Then add the following code in `applicationWillTerminate`:
 `UIApplication.shared.endReceivingRemoteControlEvents()`
 
-## Changelog
-
-All notable changes to this project will be documented in [CHANGELOG.md].
-
 ## License
-
 SwiftyRadio is available under the MIT license. See the [LICENSE] file for more info.
 
 ## Want to help?
-
 Got a bug fix, or a new feature? Create a pull request and go for it!
 
 ## Let me know!
-
 If you use SwiftyRadio, please let me know about your app.
 
-[CHANGELOG.md]: https://bitbucket.org/ericconnerapps/swiftyradio/src/master/CHANGELOG.md
-[LICENSE]: https://bitbucket.org/ericconnerapps/swiftyradio/src/master/LICENSE
+[LICENSE]: https://github.com/eaconner/SwiftyRadio/blob/master/LICENSE
 [Swift Package Manager]: https://swift.org/package-manager/
 [CocoaPods]: https://cocoapods.org
 [CocoaPods Installation]: https://guides.cocoapods.org/using/getting-started.html#getting-started

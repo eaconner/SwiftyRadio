@@ -1,6 +1,0 @@
-framework module Pods_SwiftyRadio_iOS {
-  umbrella header "Pods-SwiftyRadio-iOS-umbrella.h"
-
-  export *
-  module * { export * }
-}
