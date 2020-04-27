@@ -21,7 +21,7 @@ SwiftyRadio is an open source cross-platform streaming radio framework for iOS, 
   s.ios.deployment_target	= '9.1'
   s.tvos.deployment_target	= '9.0'
   s.osx.deployment_target	= '10.12'
-  s.source_files			= 'Sources/**/*.{h,swift}'
+  s.source_files			= 'Sources/*.{h,swift}'
   s.requires_arc			= true
   s.swift_version			= '5.0'
   s.pod_target_xcconfig		= { 'SWIFT_VERSION' => '5.0' }

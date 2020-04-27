@@ -64,24 +64,26 @@ open class SwiftyRadio: NSObject {
 //*****************************************************************
 	/// Initial setup for SwiftyRadio. Should be included in AppDelegate.swift under `didFinishLaunchingWithOptions`
 	open func setup() {
-        if #available(iOS 10.0, tvOS 10.0, *) {
-            NotificationCenter.default.addObserver(self, selector: #selector(audioRouteChangeListener(_:)), name: AVAudioSession.routeChangeNotification, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(audioInterruption(_:)), name: AVAudioSession.interruptionNotification, object: nil)
+        #if os(iOS) || os(tvOS)
+            if #available(iOS 10.0, tvOS 10.0, *) {
+                NotificationCenter.default.addObserver(self, selector: #selector(audioRouteChangeListener(_:)), name: AVAudioSession.routeChangeNotification, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(audioInterruption(_:)), name: AVAudioSession.interruptionNotification, object: nil)
 
-            // Set AVFoundation category, required for background audio
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-            } catch {
-                print("[SwiftyRadio] Setting category to AVAudioSessionCategoryPlayback failed")
+                // Set AVFoundation category, required for background audio
+                do {
+                    try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                    try AVAudioSession.sharedInstance().setActive(true)
+                } catch {
+                    print("[SwiftyRadio] Setting category to AVAudioSessionCategoryPlayback failed")
+                }
+
+                setupRemote()
+            } else {
+                // Fall back on earlier versions
             }
 
-            setupRemote()
-        } else {
-            // Fall back on earlier versions
-        }
-
-		track = Track()
+    		track = Track()
+        #endif
 	}
 
 	/// Setup the station, must be called before `Play()`
