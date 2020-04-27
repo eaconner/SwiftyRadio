@@ -64,11 +64,10 @@ open class SwiftyRadio: NSObject {
 //*****************************************************************
 	/// Initial setup for SwiftyRadio. Should be included in AppDelegate.swift under `didFinishLaunchingWithOptions`
 	open func setup() {
-        if #available(iOS 10.0, *) {
-            #if os(iOS) || os(tvOS)
+        if #available(iOS 10.0, tvOS 10.0, *) {
             NotificationCenter.default.addObserver(self, selector: #selector(audioRouteChangeListener(_:)), name: AVAudioSession.routeChangeNotification, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(audioInterruption(_:)), name: AVAudioSession.interruptionNotification, object: nil)
-            
+
             // Set AVFoundation category, required for background audio
             do {
                 try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
@@ -76,9 +75,8 @@ open class SwiftyRadio: NSObject {
             } catch {
                 print("[SwiftyRadio] Setting category to AVAudioSessionCategoryPlayback failed")
             }
-            
+
             setupRemote()
-            #endif
         } else {
             // Fall back on earlier versions
         }
