@@ -18,7 +18,7 @@ class ViewController: NSViewController {
         swiftyRadio.setup()
 
         // Setup the station
-        swiftyRadio.setStation(name: "Classic Rock 109", URL: "http://listen.classicrock109.com:10042")
+        swiftyRadio.setStation(name: "Classic Rock Florida", URL: "http://198.58.98.83:8258/stream")
 
         // Start playing the station
         swiftyRadio.play()

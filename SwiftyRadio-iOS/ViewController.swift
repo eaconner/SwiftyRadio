@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         swiftyRadio.setup()
 
         // Setup the station
-        swiftyRadio.setStation(name: "Classic Rock 109", URL: "http://listen.classicrock109.com:10042", artwork: UIImage(imageLiteralResourceName: "LaunchScreen"))
+        swiftyRadio.setStation(name: "Classic Rock Florida", URL: "http://198.58.98.83:8258/stream", artwork: UIImage(imageLiteralResourceName: "LaunchScreen"))
         
         albumArtView.image = UIImage(imageLiteralResourceName: "LaunchScreen")
         albumArtView.layer.cornerRadius = self.albumArtView.frame.size.width / 20
